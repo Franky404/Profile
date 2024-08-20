@@ -19,32 +19,34 @@
     .custom-media {
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
       overflow: hidden;
-    }
-
-    .custom-media:hover {
-      transform: scale(1.02);
-    }
-
-    .custom-video-container {
       position: relative;
-      max-width: 600px;
-      margin-bottom: 30px;
     }
 
-    .custom-play-btn {
+    .custom-controls {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: rgba(0, 0, 0, 0.5);
-      padding: 15px;
-      border-radius: 50%;
-      cursor: pointer;
+      padding: 10px;
+      border-radius: 12px;
+    }
+
+    .custom-controls button {
+      background: none;
+      border: none;
       color: white;
-      font-size: 2rem;
-      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .custom-controls input[type="range"] {
+      flex: 1;
+      margin: 0 10px;
     }
 
     video, audio {
@@ -52,17 +54,17 @@
       height: auto;
     }
 
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    .custom-media {
-      animation: fadeIn 1s ease-in-out;
-    }
-
     audio {
       margin-top: 20px;
+    }
+
+    .volume-control {
+      display: flex;
+      align-items: center;
+    }
+
+    .volume-control input {
+      margin-left: 10px;
     }
 
     /* Responsif */
@@ -76,38 +78,91 @@
 <body>
 
   <!-- Container Video -->
-  <div class="custom-video-container">
-    <video id="video" class="custom-media" controls>
+  <div class="custom-video-container custom-media">
+    <video id="video" class="custom-media">
       <source src="https://upload.xfranky.site/s/xky-1724089208486-Cosplay%202.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <div id="play-btn" class="custom-play-btn">
-      <i class="fas fa-play"></i>
+    <!-- Custom Controls -->
+    <div class="custom-controls">
+      <button id="play-pause"><i class="fas fa-play"></i></button>
+      <input type="range" id="seek-bar" min="0" max="100" value="0">
+      <button id="fullscreen"><i class="fas fa-expand"></i></button>
     </div>
   </div>
 
   <!-- Audio Player -->
-  <audio class="custom-media" controls>
-    <source src="https://upload.xfranky.site/s/xky-1724119317799-lembu%20dah%20beli%20dah%20belah.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <div class="custom-media volume-control">
+    <button id="audio-play-pause"><i class="fas fa-play"></i></button>
+    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+    <audio id="audio" class="custom-media">
+      <source src="https://upload.xfranky.site/s/xky-1724119317799-lembu%20dah%20beli%20dah%20belah.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
   <script>
+    // Video Elements
     const video = document.getElementById('video');
-    const playBtn = document.getElementById('play-btn');
+    const playPauseBtn = document.getElementById('play-pause');
+    const seekBar = document.getElementById('seek-bar');
+    const fullscreenBtn = document.getElementById('fullscreen');
 
-    // Show play button initially
-    playBtn.style.display = 'block';
+    // Audio Elements
+    const audio = document.getElementById('audio');
+    const audioPlayPauseBtn = document.getElementById('audio-play-pause');
+    const volumeBar = document.getElementById('volume-bar');
 
-    // Play video and hide play button on click
-    playBtn.addEventListener('click', () => {
-      video.play();
-      playBtn.style.display = 'none';
+    // Play/Pause Video
+    playPauseBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        video.pause();
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
     });
 
-    // Show play button when video is paused
-    video.addEventListener('pause', () => {
-      playBtn.style.display = 'block';
+    // Update Seek Bar for Video
+    video.addEventListener('timeupdate', () => {
+      const value = (100 / video.duration) * video.currentTime;
+      seekBar.value = value;
+    });
+
+    // Seek Video Position
+    seekBar.addEventListener('input', () => {
+      const time = video.duration * (seekBar.value / 100);
+      video.currentTime = time;
+    });
+
+    // Fullscreen for Video
+    fullscreenBtn.addEventListener('click', () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.mozRequestFullScreen) { // Firefox
+        video.mozRequestFullScreen();
+      } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        video.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) { // IE/Edge
+        video.msRequestFullscreen();
+      }
+    });
+
+    // Play/Pause Audio
+    audioPlayPauseBtn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        audioPlayPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        audio.pause();
+        audioPlayPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+
+    // Change Audio Volume
+    volumeBar.addEventListener('input', () => {
+      audio.volume = volumeBar.value;
     });
   </script>
 
