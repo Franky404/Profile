@@ -3,166 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modern Video & Audio Preview</title>
+  <title>Custom Video and Audio Player</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      min-height: 100vh;
     }
 
-    .card {
+    .media-card {
       background-color: white;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
       padding: 20px;
-      width: 100%;
+      width: 90%;
       max-width: 600px;
-      overflow: hidden;
-      position: relative;
+      text-align: center;
     }
 
-    .custom-media {
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
+    video, audio {
+      width: 100%;
+      border-radius: 15px;
     }
 
-    .custom-controls {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      right: 10px;
+    .controls {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      border-radius: 12px;
+      margin-top: 10px;
     }
 
-    .custom-controls button {
-      background: none;
+    .controls button {
+      background-color: #00C9FF;
       border: none;
       color: white;
-      font-size: 1.5rem;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
     }
 
-    .custom-controls input[type="range"] {
-      flex: 1;
+    .controls button:hover {
+      background-color: #007bff;
+    }
+
+    .seek-bar, .volume-bar {
+      width: 70%;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 16px;
+      color: white;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+      margin-top: auto;
+    }
+
+    footer a {
+      color: white;
       margin: 0 10px;
+      text-decoration: none;
     }
 
-    video {
-      width: 100%;
-      height: auto;
+    footer a:hover {
+      color: #007bff;
     }
 
-    /* Audio Player Styles */
-    .audio-player {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    footer p {
+      margin: 10px 0 0 0;
     }
 
-    .audio-player button {
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: #333;
-      cursor: pointer;
+    footer .social-icons i {
+      font-size: 24px;
     }
 
-    .audio-controls {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      margin-left: 10px;
-    }
-
-    .audio-controls input[type="range"] {
-      width: 100%;
-      margin-right: 10px;
-    }
-
-    /* Responsif */
-    @media (max-width: 768px) {
-      .card {
-        width: 100%;
-      }
-    }
-
-    /* Fullscreen overrides */
     .fullscreen {
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .fullscreen video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
+      z-index: 1000;
+      background-color: black;
     }
   </style>
 </head>
 <body>
 
   <!-- Video Card -->
-  <div class="card" id="video-card">
-    <div class="custom-media">
-      <video id="video" controls="false">
-        <source src="https://upload.xfranky.site/s/xky-1724089208486-Cosplay%202.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <!-- Custom Controls -->
-      <div class="custom-controls">
-        <button id="play-pause"><i class="fas fa-play"></i></button>
-        <input type="range" id="seek-bar" min="0" max="100" value="0">
-        <button id="fullscreen"><i class="fas fa-expand"></i></button>
-      </div>
+  <div class="media-card" id="video-card">
+    <video id="video" controls>
+      <source src="https://upload.xfranky.site/s/xky-1724089208486-Cosplay%202.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="controls">
+      <button id="play-pause-video">Play</button>
+      <input type="range" id="seek-bar" class="seek-bar" value="0">
+      <button id="fullscreen-video">Fullscreen</button>
     </div>
   </div>
 
   <!-- Audio Card -->
-  <div class="card">
-    <div class="audio-player">
-      <button id="audio-play-pause"><i class="fas fa-play"></i></button>
-      <div class="audio-controls">
-        <input type="range" id="audio-volume-bar" min="0" max="1" step="0.1" value="1">
-        <audio id="audio">
-          <source src="https://upload.xfranky.site/s/xky-1724119317799-lembu%20dah%20beli%20dah%20belah.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      </div>
+  <div class="media-card" id="audio-card">
+    <audio id="audio" controls>
+      <source src="https://upload.xfranky.site/s/xky-1724119317799-lembu%20dah%20beli%20dah%20belah.mp3" type="audio/mp3">
+      Your browser does not support the audio tag.
+    </audio>
+    <div class="controls">
+      <button id="play-pause-audio">Play</button>
+      <input type="range" id="volume-bar" class="volume-bar" min="0" max="1" step="0.1" value="1">
     </div>
   </div>
 
-  <script>
-    // Video Elements
-    const video = document.getElementById('video');
-    const playPauseBtn = document.getElementById('play-pause');
-    const seekBar = document.getElementById('seek-bar');
-    const fullscreenBtn = document.getElementById('fullscreen');
-    const videoCard = document.getElementById('video-card');
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="https://github.com/Franky" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.instagram.com/xky_404" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/6283183586629" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <p>Created By <strong>Franky</strong> @2024</p>
+  </footer>
 
-    // Audio Elements
+  <script>
+    const video = document.getElementById('video');
+    const videoCard = document.getElementById('video-card');
+    const playPauseBtn = document.getElementById('play-pause-video');
+    const seekBar = document.getElementById('seek-bar');
+    const fullscreenBtn = document.getElementById('fullscreen-video');
+
     const audio = document.getElementById('audio');
-    const audioPlayPauseBtn = document.getElementById('audio-play-pause');
-    const volumeBar = document.getElementById('audio-volume-bar');
+    const audioPlayPauseBtn = document.getElementById('play-pause-audio');
+    const volumeBar = document.getElementById('volume-bar');
 
     // Play/Pause Video
     playPauseBtn.addEventListener('click', () => {
       if (video.paused) {
         video.play();
-        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        playPauseBtn.textContent = 'Pause';
       } else {
         video.pause();
-        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        playPauseBtn.textContent = 'Play';
       }
     });
 
