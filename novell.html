@@ -98,12 +98,22 @@
         width: 100%;
       }
     }
+
+    /* Fullscreen overrides */
+    .fullscreen {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .fullscreen video {
+      height: 100%;
+    }
   </style>
 </head>
 <body>
 
   <!-- Video Card -->
-  <div class="card">
+  <div class="card" id="video-card">
     <div class="custom-media">
       <video id="video" controls="false">
         <source src="https://upload.xfranky.site/s/xky-1724089208486-Cosplay%202.mp4" type="video/mp4">
@@ -138,6 +148,7 @@
     const playPauseBtn = document.getElementById('play-pause');
     const seekBar = document.getElementById('seek-bar');
     const fullscreenBtn = document.getElementById('fullscreen');
+    const videoCard = document.getElementById('video-card');
 
     // Audio Elements
     const audio = document.getElementById('audio');
@@ -167,18 +178,25 @@
       video.currentTime = time;
     });
 
-    // Fullscreen for Video without showing default controls
+    // Fullscreen for the video card, not just video
     fullscreenBtn.addEventListener('click', () => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.mozRequestFullScreen) { // Firefox
-        video.mozRequestFullScreen();
-      } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        video.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
+      if (!document.fullscreenElement) {
+        if (videoCard.requestFullscreen) {
+          videoCard.requestFullscreen();
+        } else if (videoCard.mozRequestFullScreen) { // Firefox
+          videoCard.mozRequestFullScreen();
+        } else if (videoCard.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          videoCard.webkitRequestFullscreen();
+        } else if (videoCard.msRequestFullscreen) { // IE/Edge
+          videoCard.msRequestFullscreen();
+        }
+        videoCard.classList.add('fullscreen');
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+        videoCard.classList.remove('fullscreen');
       }
-      video.removeAttribute('controls'); // Ensure controls are removed in fullscreen
     });
 
     // Play/Pause Audio
