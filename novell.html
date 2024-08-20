@@ -1,375 +1,115 @@
-
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Video & Audio Preview</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
-<link rel="alternate" type="application/rss+xml" title="Baca Novel Online RSS Feed" href="https://novelonline.xyz/feed/">
-	
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+    .custom-media {
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      overflow: hidden;
+    }
 
-<!-- wp_header -->
-<title>Baca Novel Online &#8211; Novel Wuxia Sub Indo</title>
-<meta name='robots' content='noindex, nofollow' />
-<link rel="alternate" type="application/rss+xml" title="Baca Novel Online &raquo; Feed" href="https://novelonline.xyz/feed/" />
-<script type="text/javascript">
-window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/novelonline.xyz\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.5"}};
-/*! This file is auto-generated */
-!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
-</script>
-<style type="text/css">
-img.wp-smiley,
-img.emoji {
-	display: inline !important;
-	border: none !important;
-	box-shadow: none !important;
-	height: 1em !important;
-	width: 1em !important;
-	margin: 0 0.07em !important;
-	vertical-align: -0.1em !important;
-	background: none !important;
-	padding: 0 !important;
-}
-</style>
-	<link rel='stylesheet' id='wp-block-library-css' href='https://novelonline.xyz/wp-includes/css/dist/block-library/style.min.css?ver=6.3.5' type='text/css' media='all' />
-<style id='classic-theme-styles-inline-css' type='text/css'>
-/*! This file is auto-generated */
-.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
-</style>
-<style id='global-styles-inline-css' type='text/css'>
-body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
-:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
-:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
-.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
-</style>
-<link rel='stylesheet' id='page-list-style-css' href='https://novelonline.xyz/wp-content/plugins/page-list/css/page-list.css?ver=5.6' type='text/css' media='all' />
-<link rel='stylesheet' id='bonfire-shortcodes-css' href='https://novelonline.xyz/wp-content/plugins/shortcodes-by-bonfire/shortcodes-by-bonfire.css?ver=1' type='text/css' media='all' />
-<link rel='stylesheet' id='bg-shce-genericons-css' href='https://novelonline.xyz/wp-content/plugins/show-hidecollapse-expand/assets/css/genericons/genericons.css?ver=6.3.5' type='text/css' media='all' />
-<link rel='stylesheet' id='bg-show-hide-css' href='https://novelonline.xyz/wp-content/plugins/show-hidecollapse-expand/assets/css/bg-show-hide.css?ver=6.3.5' type='text/css' media='all' />
-<link rel='stylesheet' id='style-css' href='https://novelonline.xyz/wp-content/themes/vibrant/style.css?ver=1' type='text/css' media='all' />
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/jquery.min.js?ver=3.7.0' id='jquery-core-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1' id='jquery-migrate-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-content/plugins/shortcodes-by-bonfire/shortcodes-by-bonfire.js?ver=1' id='shortcodes-js-js'></script>
-<link rel="https://api.w.org/" href="https://novelonline.xyz/wp-json/" /><link rel="alternate" type="application/json" href="https://novelonline.xyz/wp-json/wp/v2/pages/616719" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://novelonline.xyz/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.3.5" />
-<link rel="canonical" href="https://novelonline.xyz/" />
-<link rel='shortlink' href='https://novelonline.xyz/' />
-<link rel="alternate" type="application/json+oembed" href="https://novelonline.xyz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnovelonline.xyz%2F" />
-<link rel="alternate" type="text/xml+oembed" href="https://novelonline.xyz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnovelonline.xyz%2F&#038;format=xml" />
-<style type="text/css" id="custom-background-css">
-body.custom-background { background-color: #ffffff; }
-</style>
-			<style type="text/css" id="wp-custom-css">
-			.st-post-tags {font-size: 16px;margin-bottom:20px;}
-.st-post-tags a {color:#6E87BA;text-decoration: none;outline:none;}
-.tab-summary {
-  padding-bottom: 15px;
-	margin-left: -15px;
-  display: table;
-  width: 100%;	
-  } 
-.summary_image {
-  width: 160px;
-  padding: 15px;
-  background: #fff;
-  display: table-cell;
-  vertical-align: top;
-}
-.summary_image img {
-  margin: auto;
-  display: block;
-}
-.summary_content_wrap {
-  width: 100%;
-  overflow: hidden;
-  display: table-cell;
-  vertical-align: top;
-  position: relative;
-  float: left;
-}
-.post-content {
-  width: 100%;
-  padding-top: 10px;
-  position: relative;
-  font-size: 16px;
-  display: inline-block;
-  vertical-align: top;
-}
-.post-content_item {
-  margin-bottom: -20px;
-}
-.summary-heading {
-  width: 90px;
-  font-weight: bold;
-  float: left;
-}
-.summary-detail {
-  width: 100%;
-  word-break: break-word;
-}
-.summary-detail a {
-  color:#6E87BA;text-decoration: none;outline:none;
-}
-.post-genre {font-size: 16px;margin-bottom:20px;}
-.post-genre a {color:#6E87BA;text-decoration: none;outline:none;}
-#yasr-custom-text-before-overall strong {display:none;}
-.yasr-overall-rating{margin-bottom:-14px;}
-.post-sinopsis{font-size: 16px;margin-bottom:3px;margin-top:25px;}
-@media only screen and (max-width:480px) {
-	.summary_image {padding:0 15px 0 15px;margin: 0 auto 20px;width: auto;display: inherit;vertical-align: top;}
-	.summary_content_wrap {width: 100%;overflow: visible;padding-left: 15px; margin-top: -10px;}
-	.summary-detail a {
-  color:#000000;text-decoration: none;outline:none;
-}
-	.page-title {font-size: 20px;}
-	.post-meta-author-date{display:none;}
-	.post-genre a {color:#000000;text-decoration: none;outline:none;}
-	.st-post-tags a {color:#000000;text-decoration: none;outline:none;}
-}
-.page-list-ext .page-list-ext-item {max-width: 1200px;margin: 0 auto;}
-.page-list-ext .page-list-ext-image {}
-.page-list-ext .page-list-ext-title {font-size:18px;}
-.myGallery {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	font-size: 1rem;
-}
-.myGallery img {
-  width: 100%;
-}
-.myGallery .item {
-  position: relative;
-  overflow: hidden;
-}
-.myGallery .item img {
-  vertical-align: middle;
-}
-.myGallery .caption {
-  margin: 0;
-  padding: 0.4em;
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  transition: transform 0.5s;
-  transform: translateY(0%);
-  background: rgba(0, 0, 0, 0.7);
-  color: rgb(255, 255, 255);
-}
-.buttonsalmon a:hover {
-	color: #fff;
-}
-button.bg-orange-button {background: linear-gradient(to bottom,#AFB8BD 100%,#AFB8BD 100%);padding:14px;font-size:16px;width:100%;text-align: left;line-height: 20px;font-family:'Source Sans Pro';border-style: none;margin:5px 0;text-shadow:0 0;box-shadow:0 0;font-weight:600;}
-button.bg-orange-button:hover, button.bg-orange-button:focus{background: linear-gradient(to bottom,#AFB8BD 100%,#AFB8BD 100%);padding:14px;font-size:16px;width:100%;text-align: left;line-height: 20px;font-family:'Source Sans Pro';border-style: none;margin:5px 0;text-shadow:0 0;box-shadow:0 0;font-weight:600;}
-button.bg-orange-button:active {background: linear-gradient(to bottom,#AFB8BD 100%,#AFB8BD 100%);padding:14px;font-size:16px;width:100%;text-align: left;line-height: 20px;font-family:'Source Sans Pro';border-style: none;margin:5px 0;text-shadow:0 0;box-shadow:0 0;font-weight:600;}
-.entry-title {display: none;}		</style>
-		
+    .custom-media:hover {
+      transform: scale(1.02);
+    }
+
+    .custom-video-container {
+      position: relative;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .custom-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      color: white;
+      font-size: 2rem;
+      display: none;
+    }
+
+    video, audio {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .custom-media {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    audio {
+      margin-top: 20px;
+    }
+
+    /* Responsif */
+    @media (max-width: 768px) {
+      .custom-video-container, audio {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body data-rsssl=1 class="home page-template-default page page-id-616719 custom-background wp-embed-responsive">
+  <!-- Container Video -->
+  <div class="custom-video-container">
+    <video id="video" class="custom-media" controls>
+      <source src="https://upload.xfranky.site/s/xky-1724089208486-Cosplay%202.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="play-btn" class="custom-play-btn">
+      <i class="fas fa-play"></i>
+    </div>
+  </div>
 
-<!-- BEGIN SITE LOGO -->
-	<div class="hide_on_mobile">
-<div id="header-bar">
-	<div class="site-logo-wrapper">
-			
-			<!-- BEGIN LOGO -->
-			<div class="site-logo">
-				<a href="https://novelonline.xyz/">
-					Baca Novel Online				</a>
-			</div>
-			<!-- END LOGO -->
-	
-			</div>
-</div></div>
-<!-- END SITE LOGO -->
+  <!-- Audio Player -->
+  <audio class="custom-media" controls>
+    <source src="https://upload.xfranky.site/s/xky-1724119317799-lembu%20dah%20beli%20dah%20belah.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-<!-- BEGIN MENU BAR -->
-	<div class="hide_on_mobile">
-<div class="menu-wrapper">
-	
-	<!-- BEGIN MENU BUTTON -->
-	<div class="menu-button"></div>
-	<!-- END MENU BUTTON -->
-	
-</div></div>
-<!-- END MENU BAR -->
+  <script>
+    const video = document.getElementById('video');
+    const playBtn = document.getElementById('play-btn');
 
-<!-- BEGIN ACCORDION MENU -->
-	<div class="hide_on_mobile">
-<div id="menu-open-overlay"></div>
-<div id="menu" class="mainmenu vibrant-icons">
-	<div class="menu01"><ul id="menu-menu-mobile" class="menu"><li id="menu-item-115008" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-115008"><a href="https://novelonline.xyz/" aria-current="page">Home</a></li>
-<li id="menu-item-115009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115009"><a href="https://novelonline.xyz/new-chapter/">New Chapter</a></li>
-<li id="menu-item-114992" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-114992"><a href="https://novelonline.xyz/list-novel/">List Novel</a></li>
-<li id="menu-item-115010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115010"><a href="https://novelonline.xyz/privacy-policy/">Privacy Policy</a></li>
-<li id="menu-item-115011" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115011"><a href="https://novelonline.xyz/disclaimer/">Disclaimer</a></li>
-</ul></div>
-	<!-- BEGIN SEARCH FORM -->
-	<div id="header-search-wrapper">
-		<!-- BEGIN SEARCH FORM -->
-<div class="searchform-wrapper">
-	<form method="get" id="searchform" action="https://novelonline.xyz/">
-		<input type="text" name="s" id="s" placeholder="Search">
-	</form>
-</div>
-<!-- END SEARCH FORM -->	</div>
-<!-- END SEARCH FORM -->
-</div></div>
-<!-- END ACCORDION MENU -->
+    // Show play button initially
+    playBtn.style.display = 'block';
 
-<!-- BEGIN CUSTOM BACKGROUND COLORS -->
-<div id="custom-backgrounds">
-	<div class="custom-backgrounds"></div>
-</div>
-<!-- END CUSTOM BACKGROUND COLORS -->
+    // Play video and hide play button on click
+    playBtn.addEventListener('click', () => {
+      video.play();
+      playBtn.style.display = 'none';
+    });
 
-<div id="sitewrap">
+    // Show play button when video is paused
+    video.addEventListener('pause', () => {
+      playBtn.style.display = 'block';
+    });
+  </script>
 
-	<div id="body" class="pagewidth clearfix">
-<div id="content" class="clearfix">
-	<div class="wrapper-outer">
-		
-		<!-- BEGIN FEATURED IMAGE -->
-		<div class="featured-image">
-					</div>
-		<!-- END FEATURED IMAGE -->
-		
-		<!-- BEGIN SHORTCODE OUTSIDE THE LOOP -->
-		<div class="post-shortcode">
-						
-		</div>
-		<!-- END SHORTCODE OUTSIDE THE LOOP -->
-	
-		<div class="content-wrapper">
-		
-			<div class="page-wrapper">
-
-												
-				<!-- BEGIN PAGE TITLE -->
-				<h1 class="page-title">Last Update</h1>
-				<!-- END PAGE TITLE -->
-				
-				<!-- BEGIN PAGE CONTENT -->
-				<div class="entry-content"><p></p>
-
-<!-- Page-list plugin v.5.6 wordpress.org/plugins/page-list/ -->
-<div class="page-list page-list-ext page-list-cols-2">
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/martial-god-asura/" title="Martial God Asura"><img src="https://novelonline.xyz/wp-content/uploads/2019/12/martial-god-asura.jpg" width="100" alt="Martial God Asura" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/martial-god-asura/" title="Martial God Asura">Martial God Asura</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/war-sovereign-soaring-the-heavens/" title="War Sovereign Soaring The Heavens"><img src="https://novelonline.xyz/wp-content/uploads/2021/05/war-sovereign-soaring-the-heavens.jpg" width="100" alt="War Sovereign Soaring The Heavens" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/war-sovereign-soaring-the-heavens/" title="War Sovereign Soaring The Heavens">War Sovereign Soaring The Heavens</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/soul-land-4/" title="Soul Land 4 : Ultimate Fighting"><img src="https://novelonline.xyz/wp-content/uploads/2021/11/ultimate-fighting.jpg" width="100" alt="Soul Land 4 : Ultimate Fighting" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/soul-land-4/" title="Soul Land 4 : Ultimate Fighting">Soul Land 4 : Ultimate Fighting</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/legend-of-swordsman/" title="Legend of Swordsman"><img src="https://novelonline.xyz/wp-content/uploads/2021/08/Legend-of-Swordsman.jpg" width="100" alt="Legend of Swordsman" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/legend-of-swordsman/" title="Legend of Swordsman">Legend of Swordsman</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/nine-star-hegemon-body-arts/" title="Nine Star Hegemon Body Arts"><img src="https://novelonline.xyz/wp-content/uploads/2022/07/nine-star-hegemon-body-art.jpg" width="100" alt="Nine Star Hegemon Body Arts" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/nine-star-hegemon-body-arts/" title="Nine Star Hegemon Body Arts">Nine Star Hegemon Body Arts</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/invincible-divine-dragons-cultivation-system/" title="Invincible Divine Dragon&#039;s Cultivation System"><img src="https://novelonline.xyz/wp-content/uploads/2024/07/invincible-divine-dragons-cultivation-system.jpg" width="100" alt="Invincible Divine Dragon&#039;s Cultivation System" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/invincible-divine-dragons-cultivation-system/" title="Invincible Divine Dragon&#039;s Cultivation System">Invincible Divine Dragon's Cultivation System</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/cultivation-online/" title="Cultivation Online"><img src="https://novelonline.xyz/wp-content/uploads/2023/04/cultivation-online.jpg" width="100" alt="Cultivation Online" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/cultivation-online/" title="Cultivation Online">Cultivation Online</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/alchemy-emperor-of-the-divine-dao/" title="Alchemy Emperor of the Divine Dao"><img src="https://novelonline.xyz/wp-content/uploads/2021/10/Alchemy-Emperor-of-the-Divine-Dao.jpg" width="100" alt="Alchemy Emperor of the Divine Dao" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/alchemy-emperor-of-the-divine-dao/" title="Alchemy Emperor of the Divine Dao">Alchemy Emperor of the Divine Dao</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/a-record-of-a-mortals-journey-to-immortality-immortal-realm/" title="A Record of a Mortal&#039;s Journey to Immortality: Immortal Realm"><img src="https://novelonline.xyz/wp-content/uploads/2023/08/a-record-of-a-mortals-journey-to-immortality-immortal-realm.jpg" width="100" alt="A Record of a Mortal&#039;s Journey to Immortality: Immortal Realm" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/a-record-of-a-mortals-journey-to-immortality-immortal-realm/" title="A Record of a Mortal&#039;s Journey to Immortality: Immortal Realm">A Record of a Mortal's Journey to Immortality: Immortal Realm</a></h3></div>
-<div class="page-list-ext-item"><div class="page-list-ext-image"><a href="https://novelonline.xyz/versatile-mage/" title="Versatile Mage"><img src="https://novelonline.xyz/wp-content/uploads/2021/07/Versatile-Mage.jpg" width="100" alt="Versatile Mage" /></a></div> <h3 class="page-list-ext-title"><a href="https://novelonline.xyz/versatile-mage/" title="Versatile Mage">Versatile Mage</a></h3></div>
-
-</div>
-<p></p>
-<div class="bonfire-columns-wrapper" style="width:50%;float:left;">
-<div class="button-wrapper">
-<div class="buttonsalmon" style="border-radius:5px;font-size:16px;"><a href="https://novelonline.xyz/list-novel/" rel="noopener" target="_blank">List Novel</a></div>
-</div>
-</div>
-<div class="bonfire-columns-wrapper" style="width:50%;float:left;">
-<div class="button-wrapper">
-<div class="buttonsalmon" style="border-radius:5px;font-size:16px;"><a href="https://novelonline.xyz/new-chapter/" rel="noopener" target="_blank">New Chapter</a></div>
-</div>
-</div>
-</div>
-				<!-- END PAGE CONTENT -->
-				
-				<!-- BEGIN POST NAVIGATION -->
-<div class="link-pages">
-					
-</div>
-				
-				<!-- END POST NAVIGATION -->
-				
-				<!-- BEGIN EDIT POST LINK -->
-								<!-- END EDIT POST LINK -->
-		
-				
-			</div>
-			<!-- /.page-wrapper -->
-		
-			<!-- BEGIN COMMENTS -->
-						<!-- END COMMENTS -->
-		</div>
-		<!-- /.content-wrapper -->
-
-	</div>
-	<!-- /.wrapper-outer -->
-</div>
-<!-- /#content -->
-
-<!-- BEGIN INCLUDE PAGINATION -->
-<!-- END INCLUDE PAGINATION -->
-
-
-	</div>
-	<!-- END body -->
-
-</div>
-<!-- END #sitewrap -->
-
-<!-- BEGIN FOOTER -->
-<div id="footer">
-	
-	<!-- BEGIN WIDGETS -->
-	<div class="footer-widgets-wrapper">
-		<div class="footer-widgets-wrapper-inner">
-			<!-- BEGIN FULL WIDTH WIDGETS --><div class="footer-widgets-1-column"></div>
-			
-			<!-- END FULL WIDTH WIDGETS -->
-		</div>
-	</div>
-	<!-- END WIDGETS -->
-
-</div>
-<!-- END FOOTER -->
-
-<!-- wp_footer -->
-<!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4866341,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4866341&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  --><script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.2' id='jquery-effects-core-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/ui/effect-slide.min.js?ver=1.13.2' id='jquery-effects-slide-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/ui/effect-highlight.min.js?ver=1.13.2' id='jquery-effects-highlight-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/ui/effect-fold.min.js?ver=1.13.2' id='jquery-effects-fold-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-includes/js/jquery/ui/effect-blind.min.js?ver=1.13.2' id='jquery-effects-blind-js'></script>
-<script type='text/javascript' id='bg-show-hide-script-js-extra'>
-/* <![CDATA[ */
-var BG_SHCE_USE_EFFECTS = "0";
-var BG_SHCE_TOGGLE_SPEED = "400";
-var BG_SHCE_TOGGLE_OPTIONS = "none";
-var BG_SHCE_TOGGLE_EFFECT = "blind";
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-content/plugins/show-hidecollapse-expand/assets/js/bg-show-hide.js?ver=6.3.5' id='bg-show-hide-script-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-content/themes/vibrant/js/main-menu.js?ver=1' id='bonfire-main-menu-js'></script>
-<script type='text/javascript' src='https://novelonline.xyz/wp-content/themes/vibrant/js/comment-form.js?ver=1' id='comment-form-js'></script>
-<script type='text/javascript' id='yasr-window-var-js-extra'>
-/* <![CDATA[ */
-var yasrWindowVar = {"siteUrl":"https:\/\/novelonline.xyz","adminUrl":"https:\/\/novelonline.xyz\/wp-admin\/","ajaxurl":"https:\/\/novelonline.xyz\/wp-admin\/admin-ajax.php","visitorStatsEnabled":"no","ajaxEnabled":"no","loaderHtml":"<div id=\"yasr-loader\" style=\"display: inline-block\">\u00a0 <img src=\"https:\/\/novelonline.xyz\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif\" \n                 title=\"yasr-loader\" alt=\"yasr-loader\" height=\"16\" width=\"16\"><\/div>","loaderUrl":"https:\/\/novelonline.xyz\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif","isUserLoggedIn":"false","isRtl":"false","starSingleForm":"\"star\"","starsPluralForm":"\"stars\"","textAfterVr":"\"[Total: %total_count%  Average: %average%]\"","textRating":"\"Rating\"","textLoadRanking":"\"Loading, please wait\"","textVvStats":"\"out of 5 stars\"","textOrderBy":"\"Order by\"","textMostRated":"\"Most Rated\"","textHighestRated":"\"Highest Rated\"","textLeftColumnHeader":"\"Post\""};
-/* ]]> */
-</script>
 </body>
 </html>
